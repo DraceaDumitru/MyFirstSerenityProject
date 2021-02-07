@@ -16,13 +16,25 @@ public class HomePage extends PageObject {
     private WebElementFacade registerLink;
     @FindBy(css = "a[title*='My Wishlist']")
     private WebElementFacade wishlistLink;
+    @FindBy(id = "search")
+    private WebElementFacade searchField;
+    @FindBy(css = ".search-button")
+    private WebElementFacade searchIcon;
+    @FindBy(css = "#nav > ol > li.level0.nav-2.parent > ul > li.level1.nav-2-5.last")
+    private WebElementFacade blazersCategory;
 
-    public void clickAccountLink(){ clickOn(accountLink); }
+    public void clickAccountLink(){ /*waitFor(accountLink);*/ clickOn(accountLink); }
 
     public void clickLoginLink(){ clickOn(loginLink); }
 
     public void clickRegisterLink(){clickOn(registerLink);}
 
     public void clickWishlistLink(){clickOn(wishlistLink);}
+
+    public void setSearchField(String text){typeInto(searchField,text);}
+
+    public void clickSearchIcon(){clickOn(searchIcon); }
+
+    public void clickManBlazersCategory(){clickOn(blazersCategory);}
 
 }

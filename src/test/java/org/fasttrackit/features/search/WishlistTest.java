@@ -1,18 +1,12 @@
 package org.fasttrackit.features.search;
 
-import net.serenitybdd.junit.runners.SerenityRunner;
-import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
 import org.fasttrackit.steps.serenity.LoginSteps;
 import org.fasttrackit.steps.serenity.WishlistSteps;
+import org.fasttrackit.utils.BaseTest;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.openqa.selenium.WebDriver;
 
-@RunWith(SerenityRunner.class)
-public class WishlistTest {
-    @Managed(uniqueSession = false)
-    private WebDriver webDriver;
+public class WishlistTest extends BaseTest {
 
     @Steps
     private LoginSteps loginSteps;
@@ -22,7 +16,7 @@ public class WishlistTest {
 
     @Test
     public void addProductToWishlistTest() {
-        loginSteps.login("denys_1997ddd@yahoo.com", "urage123");
+
         wishlistSteps.wishlist();
 
     }
