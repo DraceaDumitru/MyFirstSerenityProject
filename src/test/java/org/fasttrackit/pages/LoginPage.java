@@ -5,26 +5,26 @@ import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 
-@DefaultUrl("http://testfasttrackit.info/selenium-test/customer/account/login/")
+@DefaultUrl("http://qa4.fasttrackit.org:8008/?page_id=120")
 public class LoginPage extends PageObject {
 
-    @FindBy(id = "email")
+    @FindBy(id = "username")
     private WebElementFacade emailField;
 
-    @FindBy(id = "pass")
+    @FindBy(id = "password")
     private WebElementFacade passwordField;
 
-    @FindBy(id = "send2")
+    @FindBy(css = "button.woocommerce-Button.button")
     private WebElementFacade loginButton;
 
 
-    public void setEmailField(String userName){
+    public void set_Email_field(String userName){
         typeInto(emailField,userName);
     }
-    public void setPasswordField(String password){
+    public void set_Password_field(String password){
         typeInto(passwordField,password);
     }
-    public void clickLoginButton(){
+    public void click_Login_button(){
         clickOn(loginButton);
     }
 

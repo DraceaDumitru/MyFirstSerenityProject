@@ -11,27 +11,20 @@ public class SearchSteps {
     private SearchResultPage searchResultPage;
 
     @Step
-    public void setSearch(String value) {
-        homePage.setSearchField(value);
-    }
-
-    @Step
     public void clickSearch() {
-        homePage.clickSearchIcon();
+        homePage.click_Search_icon();
     }
+    @Step
+    public void setSearch(String text) { homePage.set_Search_field(text); }
 
     @Step
-    public void search(String value) {
-        setSearch(value);
-        clickSearch();
-    }
+    public void click_button(){homePage.setClick_on_button();}
+
     @Step
-    public void verifyIfProductIsDisplayed(String productName){
-        Assert.assertTrue(searchResultPage.isProductDisplayed( productName));
-    }
+    public void search(String value) { setSearch(value);clickSearch(); }
     @Step
-    public void verifyIfProductPriceIsDisplayed(String productName){
-        Assert.assertTrue(searchResultPage.isProductPriceDisplayed( productName));
-    }
+    public void verifyIfProductIsDisplayed(String productName){ Assert.assertTrue(searchResultPage.is_Product_Displayed( productName)); }
+    @Step
+    public void verifyIfProductPriceIsDisplayed(String productName){ Assert.assertTrue(searchResultPage.is_Product_Price_Displayed( productName)); }
 
 }

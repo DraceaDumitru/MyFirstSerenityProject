@@ -10,15 +10,10 @@ public class RegisterTest extends BaseTest {
     @Steps
     private RegisterSteps registerSteps;
     @Test
-    public void validCredentialsRegisterTest(){
-        registerSteps.navigateToRegister();
-        registerSteps.setFirstNameField("Slim");
-        registerSteps.setLastNameField("Shady");
-        registerSteps.setEmailField("slimshady@cocotier.com");
-        registerSteps.setPasswordField("rapgod");
-        registerSteps.setConfirmPasswordField("rapgod");
-        registerSteps.clickRegisterButton();
-     //  registerSteps.verifyConfirmationMessage("Slim Shady");
-
+    public void valid_credentials_Register_Test(){
+        registerSteps.navigate_to_Register();
+        registerSteps.set_Email_field("denys_1997ddd@yahoo.com");
+        registerSteps.set_Password_field("urageRyzen7");
+        registerSteps.click_Register_button();
     }
 }

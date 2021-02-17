@@ -7,20 +7,20 @@ import org.openqa.selenium.By;
 import java.util.List;
 
 public class SearchResultPage extends PageObject {
-    @FindBy(css = ".category-products .item.last")
+    @FindBy(css = "")
     private List<WebElementFacade> productList;
 
-    public boolean isProductDisplayed(String productName) {
+    public boolean is_Product_Displayed(String productName) {
         for (WebElementFacade webElementFacade : productList) {
-            if (webElementFacade.findElement(By.cssSelector(".product-name")).getText().equals(productName)) {
+            if (webElementFacade.findElement(By.cssSelector(".search-submit")).getText().equals(productName)) {
                 return true;
             }
         }
         return false;
     }
-    public boolean isProductPriceDisplayed(String productPrice) {
+    public boolean is_Product_Price_Displayed(String productPrice) {
         for (WebElementFacade webElementFacade : productList) {
-            if (webElementFacade.findElement(By.cssSelector("#old-price-403")).getText().equals(productPrice)) {
+            if (webElementFacade.findElement(By.cssSelector("#azera_shop_id_5XNDGtIpy7 > div.azera_shop_grid_col_4.azera_shop_grid_column_4.azera_shop_grid_last > li.post-58.product.type-product.status-publish.has-post-thumbnail.product_cat-accessories-clothing.last.outofstock.sale.taxable.shipping-taxable.purchasable.product-type-simple > a.woocommerce-LoopProduct-link.woocommerce-loop-product__link > span.price > ins > span")).getText().equals(productPrice)) {
                 return true;
             }
         }

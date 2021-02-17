@@ -11,46 +11,26 @@ public class RegisterSteps {
     private RegisterPage registerPage;
     private AccountPage accountPage;
 
-    public void navigateToRegister() {
+    public void navigate_to_Register() {
         homePage.open();
-        homePage.clickAccountLink();
-        homePage.clickRegisterLink();
-
+        homePage.click_Account_link();
     }
+    @Step
+    public void set_Email_field(String email) { registerPage.set_Email_field(email); }
 
     @Step
-    public void setFirstNameField(String firstName) { registerPage.setFirstNameField(firstName); }
+    public void set_Password_field(String password) { registerPage.set_Password_field(password); }
 
     @Step
-    public void setLastNameField(String lastName) {
-        registerPage.setLastNameField(lastName);
-    }
+    public void click_Register_button() { registerPage.click_Register_button(); }
 
     @Step
-    public void setEmailField(String email) { registerPage.setEmailField(email); }
+    public void register(String email, String password) {
+        navigate_to_Register();
+        set_Email_field(email);
+        set_Password_field(password);
+        click_Register_button(); }
 
     @Step
-    public void setPasswordField(String password) { registerPage.setPasswordField(password); }
-
-    @Step
-    public void setConfirmPasswordField(String confirmPassword) { registerPage.setConfirmPasswordField(confirmPassword); }
-
-    @Step
-    public void clickRegisterButton() { registerPage.clickRegisterButton(); }
-
-    @Step
-    public void register(String firstname, String lastname, String email, String password, String confirmPassword) {
-        navigateToRegister();
-        setFirstNameField(firstname);
-        setLastNameField(lastname);
-        setEmailField(email);
-        setPasswordField(password);
-        setConfirmPasswordField(confirmPassword);
-        clickRegisterButton(); }
-
-   // @Step
-//    public void verifyConfirmationMessage(String successMessage) { accountPage.verifyConfirmationMessage(successMessage); }
-
-    @Step
-    public void verifyIfConfirmMessageIsDisplayed(){ Assert.assertTrue(accountPage.returnIfConfirmMsgIsDisplayed()); }
+    public void verify_if_confirm_message_is_displayed(){ Assert.assertTrue(accountPage.return_if_confirm_msg_is_displayed()); }
 }

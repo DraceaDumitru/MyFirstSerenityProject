@@ -14,36 +14,37 @@ public class LoginSteps{
     private AccountPage accountPage;
 
     @Step
-    public void navigateToLogin(){
+    public void navigate_to_Login(){
         homePage.open();
-        homePage.clickAccountLink();
-        homePage.clickLoginLink();
+        homePage.click_Account_link();
     }
     @Step
-    public void setEmail(String email){
-        loginPage.setEmailField(email);
+    public void set_Email(String email){
+        loginPage.set_Email_field(email);
     }
     @Step
-    public void setPassword(String password){
-        loginPage.setPasswordField(password);
+    public void set_Password(String password){
+        loginPage.set_Password_field(password);
     }
     @Step
-    public void clickLoginButton(){
-        loginPage.clickLoginButton();
+    public void click_Login_button(){
+        loginPage.click_Login_button();
     }
     @Step
     public void login(String username, String password){
-        navigateToLogin();
-        setEmail(username);
-        setPassword(password);
-        clickLoginButton();
+        navigate_to_Login();
+        set_Email(username);
+        set_Password(password);
+        click_Login_button();
     }
     @Step
-    public void verifyAccountMessage(String userName){
-        accountPage.verifyHelloMessage(userName);
+    public void verify_account_message(String email){
+        accountPage.verify_hello_message(email);
     }
     @Step
-    public void verifyIfMessageIsDisplayed(){
-        Assert.assertTrue(accountPage.returnIfHelloMsgIsDisplayed());
+    public void verify_if_message_is_displayed(){
+        Assert.assertTrue(accountPage.return_if_hello_msg_is_displayed());
     }
+    @Step
+    public void return_confirmation(){Assert.assertTrue(accountPage.return_if_confirm_msg_is_displayed());}
 }
