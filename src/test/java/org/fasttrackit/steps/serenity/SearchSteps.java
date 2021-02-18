@@ -9,13 +9,14 @@ import org.junit.Assert;
 public class SearchSteps {
     private HomePage homePage;
     private SearchResultPage searchResultPage;
-
+    @Step
+    public void click_home_button(){homePage.click_on_home_button();}
+    @Step
+    public void setSearch(String text) { homePage.set_Search_field(text); }
     @Step
     public void clickSearch() {
         homePage.click_Search_icon();
     }
-    @Step
-    public void setSearch(String text) { homePage.set_Search_field(text); }
 
     @Step
     public void click_button(){homePage.setClick_on_button();}

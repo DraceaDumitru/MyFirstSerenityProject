@@ -8,6 +8,9 @@ import net.thucydides.core.annotations.DefaultUrl;
 @DefaultUrl("http://qa4.fasttrackit.org:8008/")
 public class HomePage extends PageObject {
 
+    @FindBy(css = "#menu-item-115 > a")
+    private WebElementFacade home_button;
+
     @FindBy(id = "menu-item-122")
     private WebElementFacade account_link;
 
@@ -32,6 +35,8 @@ public class HomePage extends PageObject {
     @FindBy(className = "cart-contents")
     private WebElementFacade cart_icon;
 
+    public void click_on_home_button(){clickOn(home_button);}
+
     public void click_Account_link(){ /*waitFor(accountLink);*/ clickOn(account_link); }
 
     public void set_Search_field(String text){typeInto(search_field,text);}
@@ -46,7 +51,7 @@ public class HomePage extends PageObject {
 
     public void click_Checkout_link(){clickOn(checkout_field);}
 
-    public void click_Cart_icon(String text){typeInto(cart_icon,text);}
+    public void click_Cart_icon(){clickOn(cart_icon);}
 
 
 }
