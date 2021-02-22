@@ -17,10 +17,6 @@ public class SearchSteps {
     public void clickSearch() {
         homePage.click_Search_icon();
     }
-
-    @Step
-    public void click_button(){homePage.setClick_on_button();}
-
     @Step
     public void search(String value) { setSearch(value);clickSearch(); }
     @Step

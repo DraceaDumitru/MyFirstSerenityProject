@@ -12,7 +12,7 @@ public class SearchResultPage extends PageObject {
 
     public boolean is_Product_Displayed(String productName) {
         for (WebElementFacade webElementFacade : productList) {
-            if (webElementFacade.findElement(By.cssSelector(".search-submit")).getText().equals(productName)) {
+            if (webElementFacade.findElement(By.cssSelector(".header-icons-wrap input[value=‘Search’] ")).getText().equals(productName)) {
                 return true;
             }
         }

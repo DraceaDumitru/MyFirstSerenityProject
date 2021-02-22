@@ -14,13 +14,13 @@ public class HomePage extends PageObject {
     @FindBy(id = "menu-item-122")
     private WebElementFacade account_link;
 
-    @FindBy(css = "label .search-field")
+    @FindBy(css = ".header-icons-wrap input[value=‘Search’] ")
     private WebElementFacade search_field;
 
-    @FindBy(css = ".search-submit")
+    @FindBy(css = ".header-icons-wrap input[value=‘Search’] ")
     private WebElementFacade search_icon;
 
-    @FindBy(css = ".search-submit")
+    @FindBy(css = ".header-icons-wrap input[value=‘Search’] ")
     private WebElementFacade click_on_button;
 
     @FindBy(id = "menu-item-123")

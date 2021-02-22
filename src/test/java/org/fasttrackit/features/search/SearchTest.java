@@ -26,7 +26,7 @@ public class SearchTest extends BaseTest {
         homePage.click_on_home_button();
         searchSteps.setSearch("BELT\n");
         searchSteps.clickSearch();
-        searchSteps.click_button();
+    //    searchSteps.click_button();
         searchSteps.verifyIfProductIsDisplayed("BELT");
     }
     @Ignore
@@ -36,7 +36,7 @@ public class SearchTest extends BaseTest {
         homePage.click_on_home_button();
         searchSteps.setSearch("55,00");
         searchSteps.clickSearch();
-        searchSteps.click_button();
+      //  searchSteps.click_button();
         searchSteps.verifyIfProductPriceIsDisplayed("55,00 lei");
     }
 }
